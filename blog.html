@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.scss">
+    <link rel="preload" as="image" href="assets/images/hero-banner.png">
+    <link rel="preload" as="image" href="assets/images/preloader.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css">
+    <style>
+          @media (max-width: 320px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+   @media (max-width: 375px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+   @media (max-width: 425px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+  
+  
+  #open-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000; /* Ensure the modal is above the overlay */
+  }
+  
+    #modal-button {
+    background: #F1A501;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+    #modal-container {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+    }
+
+    #modal-section {
+      position: relative;
+      background-color: #f7f7f7;
+      width: 40%;
+      margin: 7% auto;
+      padding: 40px;
+      border-radius: 15px;
+      animation: animate .5s ease-in;
+    }
+
+    @keyframes animate {
+      from {
+        top: -300px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    #modal-close-button {
+      float: right;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    #modal-title {
+      text-align: center;
+    }
+    #main{
+      width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    /* background: white; */
+    }
+ .overlay-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999; /* Set a higher z-index value to ensure it's above everything else */
+  }
+.modal-window{
+ 
+  left: 0;
+  z-index: 999;
+}
+.modal-window {
+ 
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  & > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    /* background: white; */
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+}
+
+.single-box {
+      flex-direction: column;
+      width: 370px;
+      color: #001346;
+      background-color: #fff;
+      align-self: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      cursor: pointer;
+      border-radius: 10px;
+      margin: 10px 0;
+      z-index: 1;
+      height: 450px;
+    }
+
+    .header-area.img1 {
+      background-image: url(assets/images/Combating-jetlag-is-a-major-downside-of-long-haul-flights.-.jpg);
+    }
+
+    .header-area {
+      border-radius: 10px 10px 50% 50%;
+      padding: 120px 30px;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .body-area {
+    padding: 10px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 43%; /* Ensure the content takes the full height */
+  }
+
+
+    .body-area h3 {
+      font-size: 25px;
+      margin: 20px 0 0;
+    }
+
+    .body-area h4 {
+      color: #F1A501;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .body-area p i {
+      padding-right: 20px;
+    }
+    .modal-window:target {
+    display: block;
+  }
+  
+     @media (max-width: 425px) {
+    #main {
+     left:44% !important;
+    }
+     .single-box{
+        width:306px !important;
+    }
+  }
+    @media (max-width: 430px) {
+    #main {
+     left:50% !important;
+    }
+    .single-box{
+        width:335px !important;
+    }
+  }
+    </style>
+</head>
+<body onload="openModal()">
+     <!-- modal start here  -->
+  <main class="main" id="top">
+        <div class="overlay-popup" id="overlay"></div>
+    <div id="open-modal" class="modal-window">
+      <main id="main">
+        <!-- Add close button here -->
+        <button type="button" class="btn-close" aria-label="Close"></button>
+        <div class="single-box">
+          <div class="header-area img1">
+            <!-- Add close button here -->
+            <button id="close-modal-button" onclick="closeModal()" class="btn-close">×</button>
+          </div>
+          <div class="body-area">
+            <h3>+1-866-217-4768</h3>
+            <h4>Contact For Booking</h4>
+            <button style="margin-top: 20px;" id="modal-button" onclick="callNow()">Call Now</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </main>
+  <!-- modal end here  -->
+    <header class="header " data-header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/images/FLY_KING.png" alt="logos" width="187" height="38">
+            </a>
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="#" class="logo">
+                        <img src="assets/images/FLY_KING.png" alt="logo" width="187" height="38">
+                    </a>
+                    <button class="nav-toggle-btn" aria-label="close-menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+
+                    </button>
+                </div>
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="about-us.html" class="navbar-link">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="blog.html" class="navbar-link active">Blog</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="contact.html" class="navbar-link">Contact</a>
+                    </li>
+                </ul>
+                <!-- <div class="header-actions">
+            <a href="#login" class="login-btn">Login</a>
+            <a href="#Signup" class="btn btn-primary">Sign Up</a>
+        </div> -->
+            </nav>
+            <button class="nav-toggle-btn" aria-label="open-menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+
+            </button>
+            <div class="overlay active" data-overlay data-nav-toggler=""></div>
+        </div>
+    </header>
+    <div class="container" style="margin-top: 130px;">
+        <!--<div class="projcard-container" >-->
+    
+        <!--    <div class="projcard projcard-blue">-->
+        <!--      <div class="projcard-innerbox">-->
+        <!--        <img class="projcard-img" src="assets/images/Combating-jetlag-is-a-major-downside-of-long-haul-flights.-.jpg" />-->
+        <!--        <div class="projcard-textbox">-->
+        <!--          <div class="projcard-title">Card Title</div>-->
+        <!--          <div class="projcard-subtitle">This explains the card in more detail</div>-->
+        <!--          <div class="projcard-bar"></div>-->
+        <!--          <div class="projcard-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>-->
+        <!--          <div class="projcard-tagbox">-->
+        <!--            <span class="projcard-tag">HTML</span>-->
+        <!--            <span class="projcard-tag">CSS</span>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--    </div>-->
+            
+         
+            
+        <!--  </div>-->
+          <!-- this is for card  -->
+          <h3 style="justify-content: center; display: flex; align-items: center; margin-bottom: 50px;" class="title">Blog's </h3>
+          <section class="cards-wrapper">
+            <!-- <div class="container"> -->
+                <section class="hero-section">
+                    <div class="card-grid">
+                      <a class="card" href="#">
+                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Category</p>
+                          <h3 class="card__heading">Example Card Heading</h3>
+                        </div>
+                      </a>
+                      <a class="card" href="#">
+                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Category</p>
+                          <h3 class="card__heading">Example Card Heading</h3>
+                        </div>
+                      </a>
+                      <a class="card" href="#">
+                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Category</p>
+                          <h3 class="card__heading">Example Card Heading</h3>
+                        </div>
+                      </li>
+                      <a class="card" href="#">
+                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Category</p>
+                          <h3 class="card__heading">Example Card Heading</h3>
+                        </div>
+                      </a>
+                    <div>
+                  </section>
+            <!-- </div> -->
+           
+            <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+          </section>
+    </div>
+
+
+    <footer class="footer" id="about" style="margin-top: 40px;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="assets/images/FLY_KING.png" width="187" height="38" alt="logo">
+                    </a>
+                    <p class="footer-text">
+                        We always make our customer
+                        happy by providing as many
+                        choices as possible
+                    </p>
+                    <ul class="social-list">
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">
+                            About
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Features
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Menu</a>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">
+                            Company
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Why Company
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Partner With Us
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Blog</a>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">
+                            Support
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Support Center
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Feedback
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="footer-list">
+                    <p class="footer-list-title">
+                        Get in Touch
+                    </p>
+                    <p class="footer-text">Question or feedback? We’d love to hear from you.
+                    </p>
+
+                    <form class="input-wrapper">
+                        <input class="input-field" type="email" name="email_address" placeholder="Email Address"
+                            autocomplete="off" required>
+                        <button class="input-btn" type="submit" aria-label="send a message">
+                            <ion-icon name="paper-plane-outline" aria-hidden="true"></ion-icon>
+
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright 2023. Made by <a href="https://flyking.us" class="copyright-link">flyking.us</a>
+                </p>
+                <ul class="footer-bottom-list">
+                    <li>
+                        <a href="#" class="footer-bottom-link">
+                            Terms and Condition
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-bottom-link">
+                            Privacy and Policy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script>
+    // Function to open the modal
+    function openModal() {
+      var modal = document.getElementById('open-modal');
+      var overlay = document.getElementById('overlay');
+      modal.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+  
+    // Function to close the modal
+    function closeModal() {
+      var modal = document.getElementById('open-modal');
+      var overlay = document.getElementById('overlay');
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+    function callNow() {
+    // Replace '123456789' with your actual phone number
+    window.location.href = 'tel:+1-866-217-4768';
+  }
+  </script>
+    <script src="assets/js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+        document.querySelectorAll(".projcard-description").forEach(function(box) {
+  $clamp(box, {clamp: 6});
+});
+      </script>
+</body>
+</html>

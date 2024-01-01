@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" as="image" href="assets/images/hero-banner.png">
+    <link rel="preload" as="image" href="assets/images/preloader.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css">
+    <style>
+     @media (max-width: 320px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+   @media (max-width: 375px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+   @media (max-width: 425px) {
+    .navbar-top {
+     margin:15px;
+    }
+    .navbar-list{
+        padding:6px;
+        margin:16px;
+    }
+  }
+  
+  
+ #open-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000; /* Ensure the modal is above the overlay */
+  }
+  
+    #modal-button {
+    background: #F1A501;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+    #modal-container {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+    }
+
+    #modal-section {
+      position: relative;
+      background-color: #f7f7f7;
+      width: 40%;
+      margin: 7% auto;
+      padding: 40px;
+      border-radius: 15px;
+      animation: animate .5s ease-in;
+    }
+
+    @keyframes animate {
+      from {
+        top: -300px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    #modal-close-button {
+      float: right;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    #modal-title {
+      text-align: center;
+    }
+    #main{
+      width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    /* background: white; */
+    }
+ .overlay-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999; /* Set a higher z-index value to ensure it's above everything else */
+  }
+.modal-window{
+ 
+  left: 0;
+  z-index: 999;
+}
+.modal-window {
+ 
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  & > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    /* background: white; */
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+}
+
+.single-box {
+      flex-direction: column;
+      width: 370px;
+      color: #001346;
+      background-color: #fff;
+      align-self: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      cursor: pointer;
+      border-radius: 10px;
+      margin: 10px 0;
+      z-index: 1;
+      height: 450px;
+    }
+
+    .header-area.img1 {
+      background-image: url(assets/images/Combating-jetlag-is-a-major-downside-of-long-haul-flights.-.jpg);
+    }
+
+    .header-area {
+      border-radius: 10px 10px 50% 50%;
+      padding: 120px 30px;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .body-area {
+    padding: 10px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 43%; /* Ensure the content takes the full height */
+  }
+
+
+    .body-area h3 {
+      font-size: 25px;
+      margin: 20px 0 0;
+    }
+
+    .body-area h4 {
+      color: #F1A501;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .body-area p i {
+      padding-right: 20px;
+    }
+    .modal-window:target {
+    display: block;
+  }
+  
+    @media (max-width: 425px) {
+    #main {
+     left:44%;
+    }
+     .single-box{
+        width:306px;
+    }
+  }
+    @media (max-width: 430px) {
+    #main {
+     left:53%;
+    }
+    .single-box{
+        width:326px;
+    }
+  }
+    </style>
+</head>
+
+<body onload="openModal()">
+  <!-- modal start here  -->
+  <main class="main" id="top">
+        <div class="overlay-popup" id="overlay"></div>
+    <div id="open-modal" class="modal-window">
+      <main id="main">
+        <!-- Add close button here -->
+        <button type="button" class="btn-close" aria-label="Close"></button>
+        <div class="single-box">
+          <div class="header-area img1">
+            <!-- Add close button here -->
+            <button id="close-modal-button" onclick="closeModal()" class="btn-close">×</button>
+          </div>
+          <div class="body-area">
+            <h3>+1-866-217-4768</h3>
+            <h4>Contact For Booking</h4>
+            <button style="margin-top: 20px;" id="modal-button" onclick="callNow()">Call Now</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </main>
+  <!-- modal end here  -->
+
+    <header class="header " data-header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/FLY_KING.png" alt="logos" width="187" height="38">
+            </a>
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/FLY_KING.png" alt="logo" width="187" height="38">
+                    </a>
+                    <button class="nav-toggle-btn" aria-label="close-menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+
+                    </button>
+                </div>
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link active">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="about-us.html" class="navbar-link">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="blog.html" class="navbar-link">Blog</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="contact.html" class="navbar-link">Contact</a>
+                    </li>
+                </ul>
+                <!-- <div class="header-actions">
+            <a href="#login" class="login-btn">Login</a>
+            <a href="#Signup" class="btn btn-primary">Sign Up</a>
+        </div> -->
+            </nav>
+            <button class="nav-toggle-btn" aria-label="open-menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+
+            </button>
+            <!--<div class="overlay active" data-overlay data-nav-toggler=""></div>-->
+        </div>
+    </header>
+   
+    <main>
+
+        <section class="section hero has-bg-image" aria-label="hero"
+            style="background-image: url('assets/images/hero-bg.jpg');">
+            <div class="container">
+                <div class="hero-centent">
+                    <p class="hero-subtitle">
+                        Explore the world <img src="assets/images/title-icon.svg" alt="" width="20" height="20">
+                    </p>
+
+                    <h1 class="h1 title hero-title">Tour your dream destination with Tourdaily
+                    </h1>
+                    <p class="hero-text">We always make our customer happy by providing
+                        as many choices as possible</p>
+                    <div class="wrapper">
+                        <a href="#" class="btn btn-secondary" onclick="openModal()">
+                            <span class="span">
+                                Plan a trip
+                            </span>
+                            <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                        </a>
+                        <!-- <button class="hero-btn">
+                            <img class="btn-img" src="assets/images/hero-button-img.jpg" width="100" height="100" alt="our story">
+                            Watch our Story
+                    </button> -->
+                    </div>
+                </div>
+                <figure class="hero-banner">
+                    <img src="assets/images/hero-banner.png" alt=" hero banner" class="w-100" width="631" height="735">
+                </figure>
+            </div>
+        </section>
+        <!-- <section class="section service" aria-label="service" id="service">
+            <div class="container">
+                <div class="title-wrapper">
+                    <p class="section-subtitle">
+                        What We Serve
+
+                    </p>
+                    <h2 class="h2 title section-title">
+                        Top Value For You
+                    </h2>
+                    <p class="section-text">
+                        Try a variety of benefits when
+using our services.
+
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="assets/images/service-icon-1.svg" alt="icon" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="h3 title card-title">
+                        Lot Of Choices
+
+                    </h3>
+
+                    <p class="card-text">
+                        Total 460+ destinations that we work with.
+
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="assets/images/service-icon-2.svg" alt="icon" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="h3 title card-title">
+                        Best Tour Guide
+
+                    </h3>
+
+                    <p class="card-text">
+                        Our tour guide with 15+ years of experience.
+
+
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="assets/images/service-icon-3.svg" alt="icon" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="h3 title card-title">
+                        Easy Booking
+
+                    </h3>
+
+                    <p class="card-text">
+                        With an easy and fast ticket purchase process.
+
+                    </p>
+                </div>
+
+            </div>
+     </section> -->
+
+        <section class="section desti " aria-label="destination" id="destination">
+            <div class="container">
+                <p class="section-subtitle">
+                    Top destination
+                </p>
+                <h2 class="h2 title section-title">
+                    Our Popular Tours
+                </h2>
+                <ul class="desti-list">
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-1.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Furka Pass, Obergoms
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Switzerland
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.7
+
+                                    </span>
+                                    <p class="rating-text">(11.1k Review)
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-2.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Rialto Bridge, Venezia
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Italy
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.6
+
+                                    </span>
+                                    <p class="rating-text">(16.9k Review)
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-3.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Nufenenpass, Obergoms VS
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Switzerland
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.7
+
+                                    </span>
+                                    <p class="rating-text">(120k Review)
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-4.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Cinque Terre, Riomaggiore
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Italy
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.7
+
+                                    </span>
+                                    <p class="rating-text">(70 Review)
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-5.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Cinque Terre, Riomaggiore
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Italy
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.5
+
+                                    </span>
+                                    <p class="rating-text">(985 Review)
+
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desti-card">
+                            <div class="card-banner img-holder" style="--width: 600; --height: 650;">
+                                <img src="assets/images/destination-6.jpg" height="650" width="600" loading="lazy"
+                                    alt="" class="img-cover">
+                                <span class="card-price">340$
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="h3 title">
+                                    <a href="#" class="card-title">
+                                        Cinque Terre, Riomaggiore
+                                    </a>
+                                </h3>
+                                <address class="card-text">
+                                    Italy
+                                </address>
+                                <div class="card-rating">
+                                    <span class="span">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        4.8
+
+                                    </span>
+                                    <p class="rating-text">(29.6k Review)
+
+
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary" onclick="openModal()">View All Destination
+                </a>
+            </div>
+        </section>
+
+        <!-- <div class="container"> -->
+        <div class="why_choose">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <!-- <div class="why_choose_head">
+                      <h1>W<span>HY CHOOS</span>E US?</h1>
+                  </div> -->
+                        <h2 class="h2 title section-title"
+                            style="display: flex; justify-content: center; margin-bottom: 30px;">
+                            My Choose Us
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/destination-4.jpg" alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                                
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/destination-2.jpg" alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                                
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/Combating-jetlag-is-a-major-downside-of-long-haul-flights.-.jpg"
+                                alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                               
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/destination-1.jpg" alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                               
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/destination-3.jpg" alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                             
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 top">
+                        <div class="text-down">
+                            <img src="assets/images/destination-6.jpg" alt="PN">
+                            <div class="textbox">
+                                <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis ...</p>
+                                
+                                <p class="text">Lorem ipsum dolor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+        <section class="section gallery" aria-label="gallery">
+            <div class="container">
+                <p class="section-subtitle">
+                    Photo Gallery
+                </p>
+                <h2 class="h2 title section-title">Featured Destinations
+                </h2>
+                <ul class="gallery-list">
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 700; --height: 925 ;">
+                            <img src="assets/images/gallery-1.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="925">
+                        </figure>
+                    </li>
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 700; --height: 925 ;">
+                            <img src="assets/images/gallery-2.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="925">
+                        </figure>
+                    </li>
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 840; --height: 925 ;">
+                            <img src="assets/images/gallery-3.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="840">
+                        </figure>
+                    </li>
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 700; --height: 378 ;">
+                            <img src="assets/images/gallery-4.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="378">
+                        </figure>
+                    </li>
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 700; --height: 378 ;">
+                            <img src="assets/images/gallery-5.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="378">
+                        </figure>
+                    </li>
+                    <li class="gallery-item">
+                        <figure class="item-banner img-holder" style="--width: 700; --height: 378 ;">
+                            <img src="assets/images/gallery-6.jpg" alt="" class="img-cover" loading="lazy" width="700"
+                                height="378">
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--<div class="container">-->
+        <!--    <h3 style="justify-content: center; display: flex; align-items: center; margin-bottom: 50px;" class="title">Unlock the World's Treasures with Third Party Flight Booking! </h3>-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-md-3 mb-4">-->
+        <!--                <div class="property-card">-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-image">-->
+        <!--                        <div class="property-image-title">-->
+                                  <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+        <!--                        </div>-->
+        <!--                      </div></a>-->
+        <!--                    <div class="property-description">-->
+        <!--                      <h5> Card Title </h5>-->
+        <!--                      <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-social-icons">-->
+                                <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        <!--                      </div>-->
+        <!--                    </a>-->
+        <!--                  </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-md-3 mb-4">-->
+        <!--                <div class="property-card">-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-image">-->
+        <!--                        <div class="property-image-title">-->
+                                  <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+        <!--                        </div>-->
+        <!--                      </div></a>-->
+        <!--                    <div class="property-description">-->
+        <!--                      <h5> Card Title </h5>-->
+        <!--                      <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-social-icons">-->
+                                <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        <!--                      </div>-->
+        <!--                    </a>-->
+        <!--                  </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-md-3 mb-4">-->
+        <!--                <div class="property-card">-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-image">-->
+        <!--                        <div class="property-image-title">-->
+                                  <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+        <!--                        </div>-->
+        <!--                      </div></a>-->
+        <!--                    <div class="property-description">-->
+        <!--                      <h5> Card Title </h5>-->
+        <!--                      <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-social-icons">-->
+                                <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        <!--                      </div>-->
+        <!--                    </a>-->
+        <!--                  </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-md-3 mb-4">-->
+        <!--                <div class="property-card">-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-image">-->
+        <!--                        <div class="property-image-title">-->
+                                  <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+        <!--                        </div>-->
+        <!--                      </div></a>-->
+        <!--                    <div class="property-description">-->
+        <!--                      <h5> Card Title </h5>-->
+        <!--                      <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#">-->
+        <!--                      <div class="property-social-icons">-->
+                                <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        <!--                      </div>-->
+        <!--                    </a>-->
+        <!--                  </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--</div>-->
+
+
+
+        <footer class="footer" id="about">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">
+                            <img src="assets/images/FLY_KING.png" width="187" height="38" alt="logo">
+                        </a>
+                        <p class="footer-text">
+                            We always make our customer
+                            happy by providing as many
+                            choices as possible
+                        </p>
+                        <ul class="social-list">
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">
+                                About
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Features
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Menu</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">
+                                Company
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Why Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Partner With Us
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Blog</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">
+                                Support
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Support Center
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Feedback
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="footer-list">
+                        <p class="footer-list-title">
+                            Get in Touch
+                        </p>
+                        <p class="footer-text">Question or feedback? We’d love to hear from you.
+                        </p>
+
+                        <form class="input-wrapper">
+                            <input class="input-field" type="email" name="email_address" placeholder="Email Address"
+                                autocomplete="off" required>
+                            <button class="input-btn" type="submit" aria-label="send a message">
+                                <ion-icon name="paper-plane-outline" aria-hidden="true"></ion-icon>
+
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="copyright">Copyright 2023. Made by <a href="https://flyking.us" class="copyright-link">flyking.us</a>
+                    </p>
+                    <ul class="footer-bottom-list">
+                        <li>
+                            <a href="#" class="footer-bottom-link">
+                                Terms and Condition
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-bottom-link">
+                                Privacy and Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <script src="assets/js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+            // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            // const firebaseConfig = {
+            //     apiKey: "AIzaSyBvr04-KizrE-iwjwkYXX9Rvh9gOK11Fvw",
+            //     authDomain: "travelia-de5e4.firebaseapp.com",
+            //     projectId: "travelia-de5e4",
+            //     storageBucket: "travelia-de5e4.appspot.com",
+            //     messagingSenderId: "684784184826",
+            //     appId: "1:684784184826:web:389aac9a687eafa6d00843",
+            //     measurementId: "G-L4GPSSFKCR"
+            // };
+
+            // Initialize Firebase
+            // const app = initializeApp(firebaseConfig);
+            // const analytics = getAnalytics(app);
+        </script>
+
+<script>
+    // Function to open the modal
+    function openModal() {
+      var modal = document.getElementById('open-modal');
+      var overlay = document.getElementById('overlay');
+      modal.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+  
+    // Function to close the modal
+    function closeModal() {
+      var modal = document.getElementById('open-modal');
+      var overlay = document.getElementById('overlay');
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+    function callNow() {
+    // Replace '123456789' with your actual phone number
+    window.location.href = 'tel:+1-866-217-4768';
+  }
+  </script>
+  
+</body>
+
+</html>
